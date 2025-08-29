@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>카카오톡 공유 테스트</title>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.5.0/kakao.min.js"></script>
+  <script>
+    // JavaScript 키로 초기화
+    Kakao.init('091958306c5053e723a88f93f5a5abe6'); // 여기에 JavaScript 키 넣기
+    console.log(Kakao.isInitialized()); // true면 성공
+  </script>
+</head>
+<body>
+
+  <h1>카카오톡 공유 예제</h1>
+  <button id="kakao-link-btn">카카오톡으로 공유하기</button>
+
+  <script>
+    document.getElementById('kakao-link-btn').addEventListener('click', function () {
+      Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: 'Localk-ts',
+          description: '',
+          imageUrl: 'https://i.imgur.com/AZxe9Vb.png',
+          link: {
+            mobileWebUrl: 'https://www.youtube.com/',
+            webUrl: 'https://www.youtube.com/'
+          }
+        },
+        buttons: [
+          {
+            title: '게임 보러가기',
+            link: {
+              mobileWebUrl: 'https://www.youtube.com/',
+              webUrl: 'https://www.youtube.com/'
+            }
+          }
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>
